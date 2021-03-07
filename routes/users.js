@@ -38,16 +38,16 @@ setInterval(function () {
       // console.log(stats, "CPU utilization")
       if (stats.cpu > 70) {
         console.log(`CPU Utilization ${stats.cpu}%, restarting in 5 secs`)
-        // setTimeout(function () {
-        //   process.on("exit", function () {
-        //     require("child_process").spawn(process.argv.shift(), process.argv, {
-        //       cwd: process.cwd(),
-        //       detached: true,
-        //       stdio: "inherit"
-        //     });
-        //   });
-        //   process.exit();
-        // }, 5000);
+        setTimeout(function () {
+          process.on("exit", function () {
+            require("child_process").spawn(process.argv.shift(), process.argv, {
+              cwd: process.cwd(),
+              detached: true,
+              stdio: "inherit"
+            });
+          });
+          process.exit();
+        }, 5000);
       }
     }
   })
