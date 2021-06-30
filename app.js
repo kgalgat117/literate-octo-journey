@@ -4,7 +4,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var cors = require('cors')
-// var db = require('./config/db')
 var morgan = require('morgan')
 
 var usersRouter = require('./routes/users');
